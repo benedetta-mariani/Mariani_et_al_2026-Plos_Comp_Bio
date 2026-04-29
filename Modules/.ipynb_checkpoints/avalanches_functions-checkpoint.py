@@ -325,7 +325,7 @@ def scaling_new(sizes, durations, avinterval,
                 tau = "default", errtau = "default",
                 alpha = "default", erralpha = "default",
                 maxxminsizes = "default", maxxmindur = "default",
-                xmaxsizes = "default", xmaxdur = "default"):
+                xmaxsizes = "default", xmaxdur = "default",size_lim="default", dur_lim="default"):
             
     if maxxminsizes ==  "default":
         maxxminsizes = max(sizes)
@@ -335,6 +335,10 @@ def scaling_new(sizes, durations, avinterval,
         maxxmindur = max(durations)
     if xmaxdur ==  "default":
         xmaxdur = max(durations)
+    if size_lim ==  "default":
+        size_lim = max(sizes)
+    if dur_lim ==  "default":
+        dur_lim = max(durations)
     
     if tau == "default" and errtau == "default":
         xmin,tau,errtau = return_param(sizes,maxxmin = maxxminsizes,xmax =xmaxsizes,lim = lim1)
@@ -348,20 +352,23 @@ def scaling_new(sizes, durations, avinterval,
     durations = np.array(durations)*avinterval
     xmin1 = min(sizes)
     xmin2 = min(durations)
-    
+
+    xmax1 = size_lim
+    xmax2 = dur_lim
+
     prova = np.array([np.asarray(sizes), np.asarray(durations)])
     prova = prova.transpose()
     prova2 = [0 for i in range(len(prova))]
     
     for r in range(len(prova)):
-        if prova[r][0] < xmin1 or prova[r][1] < xmin2 :
+        if prova[r][0] < xmin1 or prova[r][1] < xmin2 or prova[r][0] > xmax1 or prova[r][1] > xmax2:
             prova2[r] = False
         else:
             prova2[r] = True
   
     new = prova[prova2]
-    #print(len(new[:,0]), len(new[:,1]))
     a, b, c = sgivent(new[:,0],new[:,1])
+    
     x = np.hstack((np.log10(a).reshape(-1,1), np.ones(len(a)).reshape(-1,1)))
     
     y = np.log10(b).reshape(-1,1)
@@ -375,6 +382,7 @@ def scaling_new(sizes, durations, avinterval,
     print('Fit from of average size given duration points: delta = ',fit, '+-', errfit)
     
     x = np.arange(min(durations),max(durations))
+    a, b, c = sgivent(prova[:,0],prova[:,1])
     
     return a, b, c, x, inter, pred, errpred, fit, errfit
 

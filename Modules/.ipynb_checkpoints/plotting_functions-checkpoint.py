@@ -49,7 +49,7 @@ def return_param(sample, maxxmin="default", xmax="default", lim=4):
 def plot_av_statistics(ax, args, color, xmin, xmax, label=None,
                        marker='o', s=100, lw=1.5, 
                        lwline=3, alphaline=0.5,
-                       plot_fit=True, expo=False):
+                       plot_fit=True, expo=False, plot_param = 5):
     """
     Plot empirical PDF of avalanche statistics and optional power-law fit.
 
@@ -83,7 +83,7 @@ def plot_av_statistics(ax, args, color, xmin, xmax, label=None,
         
     if plot_fit:
         x_fit = np.linspace(xmin, xmax, 1000)
-        ax.plot(x_fit, .5 * x_fit**-exp,
+        ax.plot(x_fit, plot_param * x_fit**-exp,
                 ls='--', color=color, lw=lwline, alpha=alphaline, label=label)
         
     if expo:
