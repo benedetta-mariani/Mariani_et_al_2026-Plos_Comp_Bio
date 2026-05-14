@@ -1,6 +1,7 @@
 Code to reproduce the results of **"Whisker stimulation reinforces a resting-state network in the
 barrel cortex: nested oscillations and avalanches"** by Mariani et al, to be published in Plos Comp Bio 2026.
-Data will be available through the Zenodo link that will be here provided.
+
+The data used will be available through the **Zenodo link** that will be provided here prior to publication.
 
 ***Main Dependencies***
 
