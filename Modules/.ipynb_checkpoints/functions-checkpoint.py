@@ -123,7 +123,7 @@ def compute_fr(data, mean_interspike_time, coef, ):
     
 def concatenat_spikes(array,idx1,idx2, rep,fs):
     g = array[0,:,fs*idx1:fs*idx2]
-    for h in range(rep):
+    for h in range(1,rep):
         g = np.concatenate((g, array[h,:,fs*idx1:fs*idx2]),axis = 1)
     return g.T
     
