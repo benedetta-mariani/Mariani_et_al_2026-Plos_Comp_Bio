@@ -1,8 +1,7 @@
 Code to reproduce the results of [**"Whisker stimulation reinforces a resting-state network in the
 barrel cortex: nested oscillations and avalanches"**](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1014521) by Mariani et al, published in PLOS Computational Biology, 2026.
 
-The data used will be available through the **Zenodo link** that will be provided here prior to publication.
-
+The data used are available at this [**Zenodo link**](https://zenodo.org/records/23187126) 
 ***Main Dependencies***
 
 The project requires the following Python packages:
