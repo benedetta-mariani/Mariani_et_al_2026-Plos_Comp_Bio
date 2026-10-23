@@ -17,4 +17,8 @@ powerlaw==1.5
 emd==0.5.5
 pandas==2.0.3
 ```
+## Code attribution
+
+The modules `Modules/power.py`, `Modules/powerlaw_fit.py`, and `Modules/stats.py` were copied from the [Testing Statistical Laws in Complex Systems repository](https://github.com/martingerlach/testing-statistical-laws-in-complex-systems) by Martin Gerlach and Eduardo G. Altmann, which accompanies their paper *Testing Statistical Laws in Complex Systems*, Physical Review Letters **122**, 168301 (2019).
+
 ![Model](figs/Model.jpg)
