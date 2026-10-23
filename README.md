@@ -17,6 +17,6 @@ powerlaw==1.5
 emd==0.5.5
 pandas==2.0.3
 ```
-The modules `power.py`, `powerlaw_fit.py`, and `stats.py` were copied from [Testing Statistical Laws in Complex Systems](https://github.com/martingerlach/testing-statistical-laws-in-complex-systems) by Martin Gerlach and Eduardo G. Altmann.
+`functions.py`, `avalanches_functions.py`, and `plotting_functions.py` support spike, firing-rate, and avalanche analysis. `power.py`, `powerlaw_fit.py`, and `stats.py` provide power-law fitting and statistical tools and were copied from [Testing Statistical Laws in Complex Systems](https://github.com/martingerlach/testing-statistical-laws-in-complex-systems) by Martin Gerlach and Eduardo G. Altmann.
 
 ![Model](figs/Model.jpg)
